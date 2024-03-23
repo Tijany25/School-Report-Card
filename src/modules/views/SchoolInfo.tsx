@@ -7,8 +7,6 @@ interface SchoolInfoProps {
   }
 
 const SchoolInfo: React.FC<SchoolInfoProps>  = ({ studentName }) => {
-  console.log(studentName);
-  
   return (
     <div className="school-info">
       <div className='header'>
