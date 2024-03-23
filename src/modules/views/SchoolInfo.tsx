@@ -13,7 +13,7 @@ const SchoolInfo: React.FC<SchoolInfoProps>  = ({ studentName }) => {
       <div className='logo'><img src="/images/baitu.png" alt="School Logo" /></div>
       <div className='passport blue text-wrap'>{studentName}</div>
       </div>
-      <h1 className='blue text-3xl font-extrabold'>BAITUL-IRFA'N MONTESSORI/HEIGHTS SCHOOL</h1>
+      <h1 className='blue text-3xl font-extrabold'>BAITUL-IRFA&apos;N MONTESSORI/HEIGHTS SCHOOL</h1>
       <h2 className='text-black font-medium text-lg'>Plot 8, Block 144, Sheik Falahi Street, Grace Land Estate,</h2>
       <h2 className='text-black font-medium text-lg'>FSSC Isheri Olofin, Lagos</h2>
       <h2 className='text-black font-medium text-lg'>08027481050, 07048802984</h2>

@@ -124,7 +124,7 @@ const ReportCard: React.FC = () => {
         setInfoState={setStudentInfo}
         info={studentInfo}
       />
-      <h1 className='blue text-4xl containerbg font-extrabold'>BAITUL-IRFA'N MONTESSORI/HEIGHTS SCHOOL</h1>
+      <h1 className='blue text-4xl containerbg font-extrabold'>BAITUL-IRFA&apos;N MONTESSORI/HEIGHTS SCHOOL</h1>
 
       <div className='reportCOntainer'>
       <div className='grade'>
