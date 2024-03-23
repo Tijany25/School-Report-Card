@@ -27,11 +27,11 @@ const StudentInfo: React.FC<StudentInfoProps> = ({ info, setInfoState }) => {
         <div className='flex flex-1 w-64'>Name: <span className='redBorder'> <input type="text " name="name" value={info.name} onChange={handleChange} placeholder="Name" /></span></div>
         <div className='flex flex-1 w-32'>Class: <span className='redBorder'><input type="text" name="studentClass" value={info.studentClass} onChange={handleChange} placeholder="Class" /></span> </div>
       </div>
-      <div className='flex text-l py-2'>
-        <div className='flex flex-auto w-40 text-nowrap'>Number in class: <span className='redBorder'><input type="text" name="noInClass" value={info.noInClass} onChange={handleChange} placeholder="No in class" /></span> </div>
-        <div className='flex flex-auto w-10'>Sex:  <span className='redBorder'><input type="text" className='w-20' name="sex" value={info.sex} onChange={handleChange} placeholder="Sex" /></span> </div>
-        <div className='flex flex-auto w-10'>Term:  <span className='redBorder'><input type="text" name="term" value={info.term} onChange={handleChange} placeholder="Term" /></span> </div>
-        <div className='flex flex-auto w-10'>Year:  <span className='redBorder'><input type="text" className='w-20' name="year" value={info.year} onChange={handleChange} placeholder="Year" /></span> </div>
+      <div className='text-l py-2 studentInfo'>
+        <div className='text-nowrap noinclass flex'>Number in class: <span className='redBorder'><input type="text" name="noInClass" value={info.noInClass} onChange={handleChange} placeholder="No in class" /></span> </div>
+        <div className='flex'>Sex:  <span className='redBorder'><input type="text" className='w-20' name="sex" value={info.sex} onChange={handleChange} placeholder="Sex" /></span> </div>
+        <div className='flex'>Term:  <span className='redBorder'><input type="text" name="term" value={info.term} onChange={handleChange} placeholder="Term" /></span> </div>
+        <div className='flex'>Year:  <span className='redBorder'><input type="text" className='w-20' name="year" value={info.year} onChange={handleChange} placeholder="Year" /></span> </div>
       </div>
     </div>
   );

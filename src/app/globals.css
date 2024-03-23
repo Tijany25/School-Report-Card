@@ -36,12 +36,29 @@ body {
   width: 900px;
   border: 20px solid #2A2F8B;
   padding: 0px 5px 2px 5px;
+  position: relative;
+}
+.containerbg { 
+  margin: 1rem; 
+  position: absolute; 
+  left: 0; 
+  z-index: 1; 
+  transform: rotate(300deg); 
+  -webkit-transform: rotate(300deg); 
+  color: #2A2F8B;
+  width: max-content;
+  top: 620px;
+  opacity: 0.6;
 }
 .school-info{
   text-align: center;
+  z-index: 5;
+}
+.student-info{
+  z-index: 10;
 }
 .logo{
-  width: 200px;
+  width: 120px;
 
 }
 .blue{
@@ -54,6 +71,7 @@ body {
 .reportCOntainer{
   width: 100%;
   display: flex;
+  z-index: 5;
 }
 .grade{
   width: 75%;
@@ -69,7 +87,8 @@ body {
 }
 .input {
   width: 100%;
-  padding: 10px 5px;
+  padding: 4px;
+  align-items: center;
 }
 .total{
   width: 25px;
@@ -83,7 +102,7 @@ body {
   margin-top: 5px;
   margin-right: 5px;
   width: 120px;
-  height: 120px;
+  height: 100px;
   border: 2px solid black;
 }
 .btnContainer{
@@ -96,4 +115,12 @@ body {
   border-radius: 5px;
   background-color: #2A2F8B;
   color: antiquewhite;
+}
+
+.studentInfo{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.noinclass{
 }

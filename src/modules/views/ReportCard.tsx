@@ -57,7 +57,7 @@ const ReportCard: React.FC = () => {
     // Use html2canvas to convert the container element to an image
     html2canvas((container)).then((canvas: any) => {
       // Convert the canvas image to data URL
-      const imgData = canvas.toDataURL('image/png');
+      const imgData = canvas.toDataURL('image/png', 0.7);
 
       // Calculate the dimensions of the PDF page
       const pdfWidth = 210; // Width of A4 paper in mm
@@ -84,8 +84,7 @@ const ReportCard: React.FC = () => {
     <div>
       <div className='container bg-white text-black max-w-600'>
       <SchoolInfo
-          schoolImage={currentSchoolInfo?.image}
-          schoolName={currentSchoolInfo?.name}
+          studentName={studentInfo?.name}
       />
         {/* {currentSchoolInfo?.name ? (
         <>
@@ -125,6 +124,8 @@ const ReportCard: React.FC = () => {
         setInfoState={setStudentInfo}
         info={studentInfo}
       />
+      <h1 className='blue text-4xl containerbg font-extrabold'>BAITUL-IRFA'N MONTESSORI/HEIGHTS SCHOOL</h1>
+
       <div className='reportCOntainer'>
       <div className='grade'>
       <table className="report-card border-collapse border-black w-full mt-2">
@@ -149,28 +150,28 @@ const ReportCard: React.FC = () => {
             />
           ))}
           <tr className="text-black border-collapse border-black">
-            <td className=" p-2" />
+            <td className="" />
 
-            <td className=" p-2" />
+            <td className="" />
             <td className=""/>
-            <td className=" p-2"/>
-            <td className="border border-black p-2 text-red-600 font-bold total">Total Score</td>
-            <td className="border border-black p-2">{totalSum}</td>
+            <td className=""/>
+            <td className="border border-black text-red-600 font-bold total">Total Score</td>
+            <td className="border border-black">{totalSum}</td>
           </tr>
           <tr className="text-black border-collapse border-black">
-            <td className=" p-2" />
+            <td className="" />
 
-            <td className=" p-2" />
+            <td className="" />
             <td className=""/>
-            <td className=" p-2"/>
-            <td className="border border-black p-2 text-red-600 font-bold total">%</td>
-            <td className="border border-black p-2">{Math.round(percent)}</td>
+            <td className=""/>
+            <td className="border border-black text-red-600 font-bold total">%</td>
+            <td className="border border-black">{Math.round(percent)}</td>
           </tr>
         </tbody>
       </table>
       </div>
       <div className='sideGrid'>
-        <div className='affective mt-2'>
+        <div className='affective mt-1'>
           <div className='text-center font-medium'>AFFECTIVE DOMAIN</div>
           <table className="report-card border-collapse border-black w-full">
             <thead>
@@ -182,37 +183,37 @@ const ReportCard: React.FC = () => {
             </thead>
             <tbody className="border-collapse border-black w-full mt-4">
             <tr className="text-black border-collapse border-black">
-              <td className="border border-black p-2">PUNCTUALITY</td>
+              <td className="border border-black p-2 text-sm">PUNCTUALITY</td>
               <td className="border border-black">
                 <input className="input" type="text" onChange={(e) => handleChange(e, 'punc')} />
               </td>
             </tr>
             <tr className="text-black border-collapse border-black">
-              <td className="border border-black p-2">NEATNESS</td>
+              <td className="border border-black p-1 text-sm">NEATNESS</td>
               <td className="border border-black">
                 <input className="input" type="text" onChange={(e) => handleChange(e, 'neat')} />
               </td>
             </tr>
             <tr className="text-black border-collapse border-black">
-              <td className="border border-black p-2">POLITENESS</td>
+              <td className="border border-black p-1 text-sm">POLITENESS</td>
               <td className="border border-black">
                 <input className="input" type="text" onChange={(e) => handleChange(e, 'polite')} />
               </td>
             </tr>
             <tr className="text-black border-collapse border-black">
-              <td className="border border-black p-2">HONESTY</td>
+              <td className="border border-black p-1 text-sm">HONESTY</td>
               <td className="border border-black">
                 <input className="input" type="text" onChange={(e) => handleChange(e, 'honesty')} />
               </td>
             </tr>
             <tr className="text-black border-collapse border-black">
-              <td className="border border-black p-2">SELF CONTROL</td>
+              <td className="border border-black p-1 text-sm">SELF CONTROL</td>
               <td className="border border-black">
                 <input className="input" type="text" onChange={(e) => handleChange(e, 'self')} />
               </td>
             </tr>
             <tr className="text-black border-collapse border-black">
-              <td className="border border-black p-2">WILLINGNESS TO LEARN</td>
+              <td className="border border-black p-1 text-sm">WILLINGNESS TO LEARN</td>
               <td className="border border-black">
                 <input className="input" type="text" onChange={(e) => handleChange(e, 'will')} />
               </td>
@@ -256,6 +257,12 @@ const ReportCard: React.FC = () => {
               <td className="border blue border-black">FROM MASTER REMARK</td>
               <td className="border border-black">
                 <input className="input" type="text" onChange={(e) => handleChange(e, 'remark')} />
+              </td>
+            </tr>
+            <tr className="text-black border-collapse border-black">
+              <td className="blue border border-black">POSITION</td>
+              <td className="border border-black">
+                <input className="input" type="text" onChange={(e) => handleChange(e, 'position')} />
               </td>
             </tr>
             <tr className="text-black border-collapse border-black">
