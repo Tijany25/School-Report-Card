@@ -25,6 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+input{
+  width: 100%;
+}
 
 @layer utilities {
   .text-balance {
@@ -89,6 +92,9 @@ body {
   width: 100%;
   padding: 4px;
   align-items: center;
+}
+.student-name{
+  width: 70%;
 }
 .total{
   width: 25px;

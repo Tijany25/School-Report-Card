@@ -24,7 +24,7 @@ const StudentInfo: React.FC<StudentInfoProps> = ({ info, setInfoState }) => {
   return (
     <div className="student-info mt-2 px-5">
       <div className='flex text-lg'>
-        <div className='flex flex-1 w-64'>Name: <span className='redBorder'> <input type="text " name="name" value={info.name} onChange={handleChange} placeholder="Name" /></span></div>
+        <div className='flex student-name'>Name: <span className='redBorder'> <input type="text " name="name" value={info.name} onChange={handleChange} placeholder="Name" /></span></div>
         <div className='flex flex-1 w-32'>Class: <span className='redBorder'><input type="text" name="studentClass" value={info.studentClass} onChange={handleChange} placeholder="Class" /></span> </div>
       </div>
       <div className='text-l py-2 studentInfo'>
