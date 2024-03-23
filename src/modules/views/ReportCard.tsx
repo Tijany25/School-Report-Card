@@ -39,6 +39,7 @@ const ReportCard: React.FC = () => {
   const [studentInfo, setStudentInfo] = useState<any>({})
   const [currentSchoolInfo, setCurrentSchoolInfo] = useState<any>({ name: '', image: '' });
   const [affective, setAffective] = useState({});
+  const [loading, setLoading] = useState(false);
 
 
 
@@ -51,26 +52,25 @@ const ReportCard: React.FC = () => {
   };
 
   const generatePDF = () => {
-    // Select the container element that holds the content you want to include in the PDF
+    setLoading(true);
     const container: any = document.querySelector('.container');
 
-    // Use html2canvas to convert the container element to an image
     html2canvas((container)).then((canvas: any) => {
-      // Convert the canvas image to data URL
       const imgData = canvas.toDataURL('image/png', 0.7);
 
-      // Calculate the dimensions of the PDF page
-      const pdfWidth = 210; // Width of A4 paper in mm
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+      const pdfWidth = 210; 
+      let pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+      const maxHeight = 297; 
+      if (pdfHeight > maxHeight) {
+          pdfHeight = maxHeight;
+      }
 
-      // Create a new jsPDF instance
-      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pdf = new jsPDF('p', 'mm', 'a4', true);
 
-      // Add the image to the PDF document
       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
 
-      // Save the PDF document
-      pdf.save('report.pdf');
+      pdf.save(`${studentInfo?.name}report.pdf`);
+      setLoading(false);
     });
   };
 
@@ -165,7 +165,7 @@ const ReportCard: React.FC = () => {
             <td className=""/>
             <td className=""/>
             <td className="border border-black text-red-600 font-bold total">%</td>
-            <td className="border border-black">{Math.round(percent)}</td>
+            <td className="border border-black">{Math.round(percent || 0)}</td>
           </tr>
         </tbody>
       </table>
@@ -289,7 +289,7 @@ const ReportCard: React.FC = () => {
     </div>
     <div className='btnContainer'> 
       <button className='btn' onClick={addSubject}>Add Subject</button>
-      <button className='btn' onClick={generatePDF}>Generate PDF</button>
+      <button className='btn' onClick={generatePDF}>{loading ? 'Loading...' : 'Generate PDF' }</button>
       </div>
     </div>
   );

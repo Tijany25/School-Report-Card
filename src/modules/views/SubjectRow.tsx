@@ -84,7 +84,7 @@ interface SubjectRowProps {
     
     return (
       <tr className="text-black border-collapse border-black">
-      <td className="border border-black ">
+      <td className="border border-black blue">
         <input className="input" type="text" value={subjectObj.subject} onChange={(e) => handleChange(e, 'subject')} />
       </td>
       <td className="border border-black">
