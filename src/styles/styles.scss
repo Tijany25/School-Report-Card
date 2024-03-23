@@ -1,0 +1,312 @@
+/* You can add global styles to this file, and also import other style files */
+// @use './partials' as *;
+// @use './mixins/util' as *;
+
+@import url('./globals.css');
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+
+
+  // html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    color: currentColor;
+  }
+
+
+  img,
+  svg {
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    background: whitesmoke;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: lightgrey;
+    border-radius: 7px;
+  }
+
+  .font-roboto {
+    font-family: var(--font-roboto);
+  }
+
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+
+  .font-lora {
+    font-family: var(--font-lora);
+  }
+
+  .custom-progress {
+    background-color: #EAEAEA;
+    border-radius: 10px;
+  }
+
+  .custom-progress::-webkit-progress-value {
+    background-color: #333333;
+    border-radius: 10px;
+  }
+
+  .custom-progress::-moz-progress-bar {
+    background-color: #333333;
+    border-radius: 10px;
+
+  }
+
+  .custom-progress::-ms-fill {
+    background-color: #333333;
+    border-radius: 10px;
+
+  }
+
+  .tilt {
+    transform: skewY(-3deg);
+  }
+
+  .notilt {
+    transform: skewY(2deg);
+  }
+
+  .notification-btn {
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 24px;
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        right: 28px;
+        bottom: 2px;
+        background: #FFFFFF;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+
+      input:checked+.slider {
+        background: #FACE33;
+      }
+
+      input:focus+.slider {
+        box-shadow: 0 0 1px #FACE33;
+      }
+
+      input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+
+      .slider.round {
+        border-radius: 34px;
+      }
+
+      .slider.round:before {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  /* SCSS for the underline animation */
+  .underline-on-hover {
+    position: relative;
+    // display: inline-block;
+    width: fit-content;
+    cursor: pointer;
+    color: #333;
+    font-weight: 400;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #333;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  .container {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+  .container.open {
+    max-height: 1000px;
+    opacity: 1;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .review-tiles {
+      overflow-x: auto;
+    }
+  }
+
+
+
+  .skelly-rectangle .skelly-rectangle__shape {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%; }
+  
+  .skelly-circle .skelly-circle__shape {
+    position: relative;
+    border-radius: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black); }
+  
+  @keyframes move-right {
+    from {
+      transform: translateX(-125%); }
+    to {
+      transform: translateX(50%); } }
+  
+  .skelly-shine {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 400%;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+    animation-name: move-right;
+    animation-iteration-count: infinite; }
+}
+
+.take-to-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 16px;
+  padding: 16px;
+
+  .photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    height: fit-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+  }
+  
+  .caption {
+    text-align: center;
+    padding: 8px;
+    background-color: #fff;
+  }
+}
+
+
+
+input[type="number"].no-arrows::-webkit-outer-spin-button,
+input[type="number"].no-arrows::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"].no-arrows {
+    -moz-appearance: textfield;
+}
+
+.search-group {
+  transition: all 0.1s;
+  transition-delay: 1s;
+}
+
+.search-group:hover, .search-group:has(:focus) {
+  transition-delay: 0s;
+}
+
+.search-group input {
+  transition: all 1s;
+}
+
+.search-group:hover, .search-group:has(:focus) {
+  border-radius: 5px;
+  background: white;
+}
+
+.search-group:hover input, .search-group:has(:focus) input {
+  width: 200px;
+  padding-left: 10px;
+}
+
+
+
+/**
+TODO:
+cxcss: implement group hover
+
+browser compatibility considerations
+position: -webkit-sticky;  Safari 
+position: sticky;
+
+*/
