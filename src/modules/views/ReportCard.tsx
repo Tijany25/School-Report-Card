@@ -37,7 +37,6 @@ interface SchoolInfoProps {
 const ReportCard: React.FC = () => {
   const [subjects, setSubjects] = useState<Subject[]>([]);
   const [studentInfo, setStudentInfo] = useState<any>({})
-  const [currentSchoolInfo, setCurrentSchoolInfo] = useState<any>({ name: '', image: '' });
   const [affective, setAffective] = useState({});
   const [loading, setLoading] = useState(false);
 
@@ -86,39 +85,6 @@ const ReportCard: React.FC = () => {
       <SchoolInfo
           studentName={studentInfo?.name}
       />
-        {/* {currentSchoolInfo?.name ? (
-        <>
-            <SchoolInfo
-                schoolImage={currentSchoolInfo?.image}
-                schoolName={currentSchoolInfo?.name}
-            />
-            <button onClick={handleEditSchoolInfo}>Edit School Info</button>
-        </>
-        ) : 
-        (<button onClick={openSchoolInfoModal}>Add School Info</button>)} */}
-
-    {/* <Modal
-        isOpen={isSchoolInfoModalOpen}
-        onClose={closeSchoolInfoModal}
-        title={isEditMode ? 'Edit School Info' : 'Add School Info'}
-      >
-        <form onSubmit={handleSaveSchoolInfo}>
-          <label className='text-black'>
-            School Name:
-            <input className='border border-gray-600 px-2 py-1 mt-1 w-full' type="text" value={currentSchoolInfo.name} onChange={e => setCurrentSchoolInfo({ ...currentSchoolInfo, name: e.target.value })} />
-          </label>
-          <label className='text-black'>
-            School Image URL:
-            <input
-              className='border border-gray-600 px-2 py-1 mt-1 w-full'
-              type="file" // Change input type to file
-              accept="image/*" // Accept only image files
-              onChange={e => setCurrentSchoolInfo({ ...currentSchoolInfo, image: e.target.files ? e.target.files[0] : null })}
-            />
-          </label>
-          <button className='text-black' type="submit">Save</button>
-        </form>
-      </Modal> */}
       
       <StudentInfo
         setInfoState={setStudentInfo}

@@ -10,7 +10,7 @@ const SchoolInfo: React.FC<SchoolInfoProps>  = ({ studentName }) => {
   return (
     <div className="school-info">
       <div className='header'>
-      <div className='logo'><img src="/images/baitu.png" alt="School Logo" /></div>
+      <div className='logo'><img crossOrigin="anonymous" src="/images/baitu.png" alt="School Logo" /></div>
       <div className='passport blue text-wrap'>{studentName}</div>
       </div>
       <h1 className='blue text-3xl font-extrabold'>BAITUL-IRFA&apos;N MONTESSORI/HEIGHTS SCHOOL</h1>
