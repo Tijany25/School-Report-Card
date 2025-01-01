@@ -14,7 +14,7 @@ interface Subject {
   ca1: string;
   ca2: string;
   exam: string;
-  total?: any; // Optional
+  total?: any;
 }
 
 interface ReportCardState {
