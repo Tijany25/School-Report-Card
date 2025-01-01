@@ -1,5 +1,4 @@
 "use client"
-
 interface SubjectRowProps {
     subjectObj: {
       subject: string;
@@ -23,22 +22,6 @@ interface SubjectRowProps {
     };
   
 
-    // const displayGrade = (total: any) => {
-    //   switch (total) {
-    //     case total >= 70:
-    //       return 'A';
-    //     case total >= 60:
-    //       return 'B';
-    //     case total >= 50:
-    //       return 'C';
-    //     case total >= 40:
-    //       return 'D';
-    //     case total >= 30:
-    //       return 'E';
-    //     default:
-    //       return 'F';
-    //   }
-    // }
     const displayGrade = (total: number) => {
       
       if (total >= 70) {
